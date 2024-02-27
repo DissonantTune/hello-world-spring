@@ -13,6 +13,7 @@ pipeline {
             steps {
                 sh '''
                      gradle --version
+                     ./gradlew --version
 //                        echo "Building"
 //                        ./gradlew clean build --DskipTests   
                     '''
