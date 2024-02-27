@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { image '8.6.0-jdk' }
+        docker { image 'gradle:8.6.0-jdk' }
     }
     stages {
         stage('Test') {
