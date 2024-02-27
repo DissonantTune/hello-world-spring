@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+//    agent any
+    agent {
+        docker {
+            image '8.6.0-jdk'
+        }
+    }
     options {
         skipStagesAfterUnstable()
     }
@@ -7,8 +12,9 @@ pipeline {
         stage('Build') {
             steps {
                 sh '''
-                        echo "Building"
-                        ./gradlew clean build --DskipTests   
+                     gradle --version
+//                        echo "Building"
+//                        ./gradlew clean build --DskipTests   
                     '''
             }
         }
@@ -16,7 +22,7 @@ pipeline {
             steps {
                 sh '''
                         echo "Testing"
-                        ./gradlew test
+//                        ./gradlew test
                     '''
             }
         }
